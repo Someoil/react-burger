@@ -1,0 +1,17 @@
+.item {
+    position: relative;
+    width: 272px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+        text-align: center;
+    }
+    .count{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

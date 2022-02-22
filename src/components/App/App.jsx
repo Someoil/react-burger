@@ -20,7 +20,7 @@ function App() {
       <main>
         <div className="container">
           <h1 className={clsx('text text_type_main-large mt-10 mb-5')}>Соберите бургер</h1>
-          <BurgerIngredients ingredient={Data}/>
+          <BurgerIngredients ingredients={Data}/>
         </div>
        
       </main>

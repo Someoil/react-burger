@@ -9,7 +9,7 @@ function Header () {
       <header>
         <div className="container">
           <nav className={clsx(styles.nav, 'flex-between')}>
-            <div>
+            <div style={{width:365}}>
               <ul className={clsx(styles.menu, 'flex-center')}>
                 <li><a className={'flex-center text text_type_main-default pt-3 pr-5 pb-4 mr-2'} href="">
                   <span className='flex-center mr-2'><BurgerIcon type="primary" /></span><span>Конструктор</span>
@@ -20,8 +20,8 @@ function Header () {
               </ul>
             </div>
             <Logo />
-            <div>
-              <a className={'flex-center text text_type_main-default text_color_inactive pl-5 pt-3 pb-4'} href="">
+            <div style={{width:365}}>
+              <a style={{display:'flex', justifyContent: 'flex-end'}} className={'flex-center text text_type_main-default text_color_inactive pl-5 pt-3 pb-4'} href="">
                   <span className='flex-center mr-2'><ProfileIcon type="secondary" /></span><span>Личный кабинет</span>
               </a>
             </div>

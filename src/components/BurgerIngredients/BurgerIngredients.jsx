@@ -9,9 +9,9 @@ import BurgerIngredient from './BurgerIngredient';
 function BurgerIngredients ({ingredients}){
     const [current, setCurrent] = React.useState('one')
     return (
-      <section>
-        <div style={{ display: 'flex' }} className={'mb-10'}>
-          <Tab value="one" active={current === 'one'} onClick={setCurrent}>
+      <section className={clsx(styles.section, 'mb-10')}>
+        <div className={'flex mb-10'}>
+          <Tab value="one" className={clsx('ji')} active={current === 'one'} onClick={setCurrent}>
             Булки
           </Tab>
           <Tab value="two" active={current === 'two'} onClick={setCurrent}>
@@ -21,7 +21,27 @@ function BurgerIngredients ({ingredients}){
             Начинки
           </Tab>
         </div>
-       
+        <h2 className="text text_type_main-medium mb-6">Булки</h2>
+        <div className={clsx(styles.wrap, 'mb-10')}>
+          {ingredients.map((ingredient)=>{
+            if(ingredient.type==='bun') return <BurgerIngredient className={styles.wrap} ingredient={ingredient} onClick='' key={ingredient._id}/>
+          }         
+          )}
+        </div>
+        <h2 className="text text_type_main-medium mb-6">Соусы</h2>
+        <div className={clsx(styles.wrap, 'mb-10')}>
+          {ingredients.map((ingredient)=>{
+            if(ingredient.type==='sauce') return <BurgerIngredient ingredient={ingredient} onClick='' key={ingredient._id}/>
+          }         
+          )}
+        </div>
+        <h2 className="text text_type_main-medium mb-6">Начинки</h2>
+        <div className={clsx(styles.wrap, 'mb-10')}>
+          {ingredients.map((ingredient)=>{
+            if(ingredient.type==='main') return <BurgerIngredient ingredient={ingredient} onClick='' key={ingredient._id}/>
+          }         
+          )}
+        </div>
       </section>
     );
 }
