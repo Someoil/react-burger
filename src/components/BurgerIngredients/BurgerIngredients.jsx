@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './BurgerIngredients.module.scss';
 import clsx from 'clsx';
 
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import BurgerIngredient from './BurgerIngredient';
-import {IngredientsPropTypes} from '../../utils/IngredientsPropTypes';
+import {IngredientsPropType} from '../../utils/ingredientsPropTypes';
 function BurgerIngredients ({ingredients}){
     const [current, setCurrent] = React.useState('one')
     return (
@@ -48,6 +47,6 @@ function BurgerIngredients ({ingredients}){
     );
 }
 BurgerIngredients.propTypes = {
-  ingredients: IngredientsPropTypes
+  ingredients: IngredientsPropType.isRequired
 }
 export default BurgerIngredients;

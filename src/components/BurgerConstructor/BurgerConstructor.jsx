@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './BurgerConstructor.module.scss';
 import clsx from 'clsx';
 
 import {ConstructorElement, Button, CurrencyIcon, DragIcon} from '@ya.praktikum/react-developer-burger-ui-components';
 
-import {IngredientsPropTypes} from '../../utils/IngredientsPropTypes';
+import {IngredientsPropType} from '../../utils/ingredientsPropTypes';
 
 function BurgerConstructor ({ingredients}){
     const tradingPrice = (arr) => arr.reduce((sum, current) => sum + current.price, 0);
@@ -104,6 +103,6 @@ function BurgerConstructor ({ingredients}){
 }
 
 BurgerConstructor.propTypes = {
-  ingredients: IngredientsPropTypes
+  ingredients: IngredientsPropType
 }
 export default BurgerConstructor;

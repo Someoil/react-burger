@@ -3,6 +3,7 @@ import styles from './BurgerIngredient.module.scss';
 import clsx from 'clsx';
 
 import {CurrencyIcon, Counter} from '@ya.praktikum/react-developer-burger-ui-components';
+import {IngredientPropType} from '../../utils/ingredientsPropTypes';
 
 function BurgerIngredient ({ingredient, onClick}){
     return (
@@ -16,5 +17,7 @@ function BurgerIngredient ({ingredient, onClick}){
       </article>
     );
 }
-
+BurgerIngredient.propTypes = {
+  ingredient: IngredientPropType.isRequired
+}
 export default BurgerIngredient;
