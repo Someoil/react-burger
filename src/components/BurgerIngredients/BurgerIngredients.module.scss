@@ -1,27 +1,13 @@
 .section {
     width: 600px;
-    height: 700px;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #8585AD;
-        border: 3px solid #8585AD;
-    }
-    &::-webkit-scrollbar-track {
-        margin-top: 50px;
-        margin-bottom: 50px;
-        background: #2F2F37;
-
-    }
 }
-
 .wrap {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+.scroll {
+    height: 700px;
+    overflow-y: auto;
 }

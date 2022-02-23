@@ -21,26 +21,28 @@ function BurgerIngredients ({ingredients}){
             Начинки
           </Tab>
         </div>
-        <h2 className="text text_type_main-medium mb-6">Булки</h2>
-        <div className={clsx(styles.wrap, 'mb-10')}>
-          {ingredients.map((ingredient)=>{
-            if(ingredient.type==='bun') return <BurgerIngredient className={styles.wrap} ingredient={ingredient} onClick='' key={ingredient._id}/>
-          }         
-          )}
-        </div>
-        <h2 className="text text_type_main-medium mb-6">Соусы</h2>
-        <div className={clsx(styles.wrap, 'mb-10')}>
-          {ingredients.map((ingredient)=>{
-            if(ingredient.type==='sauce') return <BurgerIngredient ingredient={ingredient} onClick='' key={ingredient._id}/>
-          }         
-          )}
-        </div>
-        <h2 className="text text_type_main-medium mb-6">Начинки</h2>
-        <div className={clsx(styles.wrap, 'mb-10')}>
-          {ingredients.map((ingredient)=>{
-            if(ingredient.type==='main') return <BurgerIngredient ingredient={ingredient} onClick='' key={ingredient._id}/>
-          }         
-          )}
+        <div className={clsx(styles.scroll)}>
+          <h2 className="text text_type_main-medium mb-6">Булки</h2>
+          <div className={clsx(styles.wrap, 'mb-10')}>
+            {ingredients.map((ingredient)=>{
+              if(ingredient.type==='bun') return <BurgerIngredient className={styles.wrap} ingredient={ingredient} onClick='' key={ingredient._id}/>
+            }         
+            )}
+          </div>
+          <h2 className="text text_type_main-medium mb-6">Соусы</h2>
+          <div className={clsx(styles.wrap, 'mb-10')}>
+            {ingredients.map((ingredient)=>{
+              if(ingredient.type==='sauce') return <BurgerIngredient ingredient={ingredient} onClick='' key={ingredient._id}/>
+            }         
+            )}
+          </div>
+          <h2 className="text text_type_main-medium mb-6">Начинки</h2>
+          <div className={clsx(styles.wrap, 'mb-10')}>
+            {ingredients.map((ingredient)=>{
+              if(ingredient.type==='main') return <BurgerIngredient ingredient={ingredient} onClick='' key={ingredient._id}/>
+            }         
+            )}
+          </div>
         </div>
       </section>
     );
