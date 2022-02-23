@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import {Tab} from '@ya.praktikum/react-developer-burger-ui-components';
 import BurgerIngredient from './BurgerIngredient';
-
+import {IngredientsPropTypes} from '../../utils/IngredientsPropTypes';
 function BurgerIngredients ({ingredients}){
     const [current, setCurrent] = React.useState('one')
     return (
@@ -47,5 +47,7 @@ function BurgerIngredients ({ingredients}){
       </section>
     );
 }
-
+BurgerIngredients.propTypes = {
+  ingredients: IngredientsPropTypes
+}
 export default BurgerIngredients;

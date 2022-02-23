@@ -5,6 +5,7 @@ import clsx from 'clsx';
 
 import {ConstructorElement, Button, CurrencyIcon, DragIcon} from '@ya.praktikum/react-developer-burger-ui-components';
 
+import {IngredientsPropTypes} from '../../utils/IngredientsPropTypes';
 
 function BurgerConstructor ({ingredients}){
     const tradingPrice = (arr) => arr.reduce((sum, current) => sum + current.price, 0);
@@ -102,4 +103,7 @@ function BurgerConstructor ({ingredients}){
     );
 }
 
+BurgerConstructor.propTypes = {
+  ingredients: IngredientsPropTypes
+}
 export default BurgerConstructor;

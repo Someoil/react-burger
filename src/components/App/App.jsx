@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../images/logo.svg';
 import styles from './App.module.css';
 
 import '../../styles/reset.scss'; 
@@ -12,9 +11,7 @@ import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
 
 import Data from "../../utils/data.json";
 
-function App() {
-  console.log(Data);
-  
+function App() {  
   return (
     <div>
       <AppHeader />
