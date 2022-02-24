@@ -1,37 +1,37 @@
 * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    vertical-align: baseline;
-    font: inherit;
-    font-size: 100%;
-    border: none;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+  border: none;
+  outline: none;
 }
 
 body,
 html {
-    // height: 100%;
-    font-size: 100%;
-    line-height: 1.35;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    // font-size: 16px;
-    overflow-x: hidden;
-    width: 100%;
-    // position: relative;
-    // z-index: 0;
+  // height: 100%;
+  font-size: 100%;
+  line-height: 1.35;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  // font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  // position: relative;
+  // z-index: 0;
 }
 
 html {
-    // overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 body {
-    // overflow-x: hidden;
-    // position: relative;
+  // overflow-x: hidden;
+  // position: relative;
 }
 
 article,
@@ -45,52 +45,52 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 li,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 sub,
 sup {
-    font-size: 65%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: 65%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-    vertical-align: top;
-    vertical-align: super;
+  vertical-align: top;
+  vertical-align: super;
 }
 
 sub {
-    vertical-align: bottom;
-    vertical-align: sub;
+  vertical-align: bottom;
+  vertical-align: sub;
 }
 
 img {
-    vertical-align: bottom;
-    border-style: none;
+  vertical-align: bottom;
+  border-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
 }
 
 a:focus,
 a:hover {
-    text-decoration: none;
-    outline: none;
+  text-decoration: none;
+  outline: none;
 }
 
 b,
 strong {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 button,
@@ -98,73 +98,73 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
 button,
 input {
-    overflow: visible;
+  overflow: visible;
 }
 
 button,
 select {
-    text-transform: none;
+  text-transform: none;
 }
 
 [type="button"],
 [type="reset"],
 [type="submit"],
 button {
-    -webkit-appearance: button;
-    cursor: pointer;
+  -webkit-appearance: button;
+  cursor: pointer;
 }
 
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner,
 button::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
+  border-style: none;
+  padding: 0;
 }
 
 ::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    font: inherit;
+  -webkit-appearance: button;
+  font: inherit;
 }
 
 input {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 input::ms-clear {
-    display: none;
+  display: none;
 }
 
 input[type="submit"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 textarea {
-    overflow: hidden;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    resize: none;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  resize: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }

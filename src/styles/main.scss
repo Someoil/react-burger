@@ -18,20 +18,20 @@
   align-items: center;
   justify-content: space-between;
 }
-*{
+
+* {
   &::-webkit-scrollbar {
     width: 8px;
-}
+  }
 
-&::-webkit-scrollbar-thumb {
-    background: #8585AD;
-    border: 3px solid #8585AD;
-}
+  &::-webkit-scrollbar-thumb {
+    background: #8585ad;
+    border: 3px solid #8585ad;
+  }
 
-&::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track {
     margin-top: 50px;
     margin-bottom: 50px;
-    background: #2F2F37;
-
-}
+    background: #2f2f37;
+  }
 }

@@ -1,29 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import '../../styles/reset.scss'; 
-import '../../styles/main.scss'; 
-import styles from './App.module.scss';
-import clsx from 'clsx';
+import "../../styles/reset.scss";
+import "../../styles/main.scss";
+import styles from "./App.module.scss";
+import clsx from "clsx";
 
-import AppHeader from '../AppHeader/AppHeader';
-import BurgerIngredients from '../BurgerIngredients/BurgerIngredients';
-import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
+import AppHeader from "../AppHeader/AppHeader";
+import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
+import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 
 import Data from "../../utils/data.json";
 
-function App() {  
+function App() {
   return (
     <div>
       <AppHeader />
       <main>
-        <div className={clsx('container')}>
-          <h1 className={clsx('text text_type_main-large mt-10 mb-5')}>Соберите бургер</h1>
+        <div className={clsx("container")}>
+          <h1 className={clsx("text text_type_main-large mt-10 mb-5")}>
+            Соберите бургер
+          </h1>
           <div className={clsx(styles.content)}>
-            <BurgerIngredients ingredients={Data}/>
-            <BurgerConstructor ingredients={Data}/>
+            <BurgerIngredients ingredients={Data} />
+            <BurgerConstructor ingredients={Data} />
           </div>
         </div>
-       
       </main>
     </div>
   );
