@@ -1,0 +1,8 @@
+.linksWrap {
+    width: 365px;
+}
+
+.lk {
+    display: flex;
+    justify-content: flex-end;
+}

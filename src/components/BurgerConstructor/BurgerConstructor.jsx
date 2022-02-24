@@ -21,62 +21,21 @@ function BurgerConstructor ({ingredients}){
           />
           <div className={styles.scroll}>
             <div className={styles.drop}>
-              <div className={styles.element}>
+
+            {ingredients.map((ingredient)=>{
+              if(ingredient.type!=='bun'){
+                return <div className={styles.element}>
                   <DragIcon/>
                   <ConstructorElement
-                  text={ingredients[1].name}
-                  price={ingredients[1].price}
-                  thumbnail={ingredients[1].image}
+                  text={ingredient.name}
+                  price={ingredient.price}
+                  thumbnail={ingredient.image}
                 />
               </div>
-              <div className={styles.element}>
-                  <DragIcon/>
-                  <ConstructorElement
-                  text={ingredients[2].name}
-                  price={ingredients[2].price}
-                  thumbnail={ingredients[2].image}
-                />
-              </div>
-              <div className={styles.element}>
-                  <DragIcon/>
-                  <ConstructorElement
-                  text={ingredients[3].name}
-                  price={ingredients[3].price}
-                  thumbnail={ingredients[3].image}
-                />
-              </div>
-              <div className={styles.element}>
-                  <DragIcon/>
-                  <ConstructorElement
-                  text={ingredients[4].name}
-                  price={ingredients[4].price}
-                  thumbnail={ingredients[4].image}
-                />
-              </div>
-              <div className={styles.element}>
-                  <DragIcon/>
-                  <ConstructorElement
-                  text={ingredients[5].name}
-                  price={ingredients[5].price}
-                  thumbnail={ingredients[5].image}
-                />
-              </div>
-              <div className={styles.element}>
-                  <DragIcon/>
-                  <ConstructorElement
-                  text={ingredients[6].name}
-                  price={ingredients[6].price}
-                  thumbnail={ingredients[6].image}
-                />
-              </div>
-              <div className={styles.element}>
-                  <DragIcon/>
-                  <ConstructorElement
-                  text={ingredients[1].name}
-                  price={ingredients[1].price}
-                  thumbnail={ingredients[1].image}
-                />
-              </div>
+              } 
+            }         
+            )}
+            
             </div>
           </div>
           <ConstructorElement
