@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './App.module.css';
 
 import '../../styles/reset.scss'; 
 import '../../styles/main.scss'; 
