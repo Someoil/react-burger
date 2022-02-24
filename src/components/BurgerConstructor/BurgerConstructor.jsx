@@ -24,7 +24,7 @@ function BurgerConstructor ({ingredients}){
 
             {ingredients.map((ingredient)=>{
               if(ingredient.type!=='bun'){
-                return <div className={styles.element}>
+                return <div className={styles.element} key={ingredient._id}>
                   <DragIcon/>
                   <ConstructorElement
                   text={ingredient.name}
