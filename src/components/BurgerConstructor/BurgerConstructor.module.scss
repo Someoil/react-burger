@@ -1,0 +1,46 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+}
+
+.constructor {
+  > div:first-child {
+    margin-bottom: 16px;
+    margin-left: 40px;
+  }
+
+  > div:last-child {
+    margin-top: 16px;
+    margin-left: 40px;
+  }
+}
+
+.scroll {
+  max-height: 504px;
+  overflow-y: auto;
+
+  > div > div {
+    width: 530px;
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+}
+
+.drop {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+.price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
