@@ -9,6 +9,7 @@
         margin-bottom: 16px;
         margin-left: 40px;
     }
+
     >div:last-child {
         margin-top: 16px;
         margin-left: 40px;
@@ -27,4 +28,19 @@
         justify-content: space-between;
         margin-right: 20px;
     }
+}
+
+.drop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.bottom{
+    display: flex;
+    justify-content: flex-end;
+}
+.price{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

@@ -7,8 +7,8 @@ import {IngredientPropType} from '../../utils/ingredientsPropTypes';
 
 function BurgerIngredient ({ingredient, onClick}){
     return (
-      <article className={clsx(styles.item)}>
-        <img className={clsx(styles.image, 'ml-4 mr-4 mb-1')} src={ingredient.image} alt="" />
+      <article className={clsx(styles.item, 'mb-8')}>
+        <img className={clsx(styles.image, 'ml-4 mr-4 mb-1')} src={ingredient.image} alt={ingredient.name} />
         <div className={clsx('flex-center mb-1')}>
           <span className={clsx(styles.price, 'text text_type_digits-default mr-2')}>{ingredient.price}</span><CurrencyIcon type="primary" />
         </div>

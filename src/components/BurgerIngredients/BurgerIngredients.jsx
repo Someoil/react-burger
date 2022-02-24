@@ -9,8 +9,8 @@ function BurgerIngredients ({ingredients}){
     const [current, setCurrent] = React.useState('one')
     return (
       <section className={clsx(styles.section, 'mb-10')}>
-        <div className={'flex mb-10'}>
-          <Tab value="one" className={clsx('ji')} active={current === 'one'} onClick={setCurrent}>
+        <div className={clsx(styles.tabs, 'mb-10')}>
+          <Tab value="one" active={current === 'one'} onClick={setCurrent}>
             Булки
           </Tab>
           <Tab value="two" active={current === 'two'} onClick={setCurrent}>

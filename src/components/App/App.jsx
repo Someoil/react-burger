@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../../styles/reset.scss'; 
 import '../../styles/main.scss'; 
+import styles from './App.module.scss';
 import clsx from 'clsx';
 
 import AppHeader from '../AppHeader/AppHeader';
@@ -17,7 +18,7 @@ function App() {
       <main>
         <div className={clsx('container')}>
           <h1 className={clsx('text text_type_main-large mt-10 mb-5')}>Соберите бургер</h1>
-          <div style={{display:'flex',justifyContent:'space-between'}}>
+          <div className={clsx(styles.content)}>
             <BurgerIngredients ingredients={Data}/>
             <BurgerConstructor ingredients={Data}/>
           </div>

@@ -8,18 +8,19 @@ import {IngredientsPropType} from '../../utils/ingredientsPropTypes';
 
 function BurgerConstructor ({ingredients}){
     const tradingPrice = (arr) => arr.reduce((sum, current) => sum + current.price, 0);
+
     return (
-      <section  className={clsx(styles.section)}>
+      <section className={clsx(styles.section)}>
         <div className={clsx(styles.constructor)}>
           <ConstructorElement 
             type="top"
             isLocked={true}
-            text={ingredients[0].name}
+            text={ingredients[0].name + ' (верх)'}
             price={ingredients[0].price}
             thumbnail={ingredients[0].image}
           />
           <div className={styles.scroll}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div className={styles.drop}>
               <div className={styles.element}>
                   <DragIcon/>
                   <ConstructorElement
@@ -81,14 +82,14 @@ function BurgerConstructor ({ingredients}){
           <ConstructorElement
             type="bottom"
             isLocked={true}
-            text={ingredients[0].name}
+            text={ingredients[0].name + ' (низ)'}
             price={ingredients[0].price}
             thumbnail={ingredients[0].image}
           />
         </div>
         
-        <div style={{display: 'flex', justifyContent: "flex-end"}} className='mt-10 mr-10'>
-          <div className="price mr-10" style={{display: 'flex', justifyContent: "flex-end", alignItems: "center"}}>
+        <div className={clsx(styles.bottom, 'mt-10 mr-10')}>
+          <div className={clsx(styles.price, 'mr-10')}>
             <span className="text text_type_digits-medium mr-2">
               {tradingPrice(ingredients)}
             </span>
