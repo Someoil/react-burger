@@ -29,7 +29,7 @@ function BurgerIngredients({ ingredients }) {
                 <BurgerIngredient
                   className={styles.wrap}
                   ingredient={ingredient}
-                  onClick=""
+                  // onClick=""
                   key={ingredient._id}
                 />
               );
@@ -42,7 +42,7 @@ function BurgerIngredients({ ingredients }) {
               return (
                 <BurgerIngredient
                   ingredient={ingredient}
-                  onClick=""
+                  // onClick=""
                   key={ingredient._id}
                 />
               );
@@ -55,7 +55,7 @@ function BurgerIngredients({ ingredients }) {
               return (
                 <BurgerIngredient
                   ingredient={ingredient}
-                  onClick=""
+                  // onClick=""
                   key={ingredient._id}
                 />
               );

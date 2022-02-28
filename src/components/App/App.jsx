@@ -8,7 +8,7 @@ import AppHeader from "../AppHeader/AppHeader";
 import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 
-import Data from "../../utils/data.json";
+//import Data from "../../utils/data.json";
 
 function App() {
   const dataUrl = "https://norma.nomoreparties.space/api/ingredients";
