@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./BurgerIngredient.module.scss";
 import clsx from "clsx";
 
@@ -34,13 +34,14 @@ function BurgerIngredient({ ingredient }) {
         <h3 className={clsx("")}>{ingredient.name}</h3>
         <Counter className={clsx(styles.count)} count={1} size="default" />
       </article>
-      {isModalOpen &&<Modal
+      {isModalOpen && (
+        <Modal
           title="Детали ингредиента"
           ingredient={ingredient}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
-      }
+      )}
     </>
   );
 }

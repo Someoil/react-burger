@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./IngredientDetails.module.scss";
 import clsx from "clsx";
+import { IngredientPropType } from "../../utils/ingredientsPropTypes";
 
 function IngredientDetails({ ingredient }) {
   return (
@@ -10,9 +11,9 @@ function IngredientDetails({ ingredient }) {
         src={ingredient.image_large}
         alt=""
       />
-      <h3 className={clsx(styles.title, "mb-8 text text_type_main-medium")}>
+      <h2 className={clsx(styles.title, "mb-8 text text_type_main-medium")}>
         {ingredient.name}
-      </h3>
+      </h2>
       <ul className={clsx(styles.info)}>
         <li
           className={clsx(
@@ -61,5 +62,7 @@ function IngredientDetails({ ingredient }) {
     </div>
   );
 }
-
+IngredientDetails.propTypes = {
+  ingredient: IngredientPropType,
+};
 export default IngredientDetails;

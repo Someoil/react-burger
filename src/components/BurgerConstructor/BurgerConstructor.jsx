@@ -9,9 +9,15 @@ import {
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
+import Modal from "../Modal/Modal";
 import { IngredientsPropType } from "../../utils/ingredientsPropTypes";
 
 function BurgerConstructor({ ingredients }) {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  function showModal() {
+    setIsModalOpen(true);
+  }
+
   const tradingPrice = (arr) =>
     arr.reduce((sum, current) => sum + current.price, 0);
 
@@ -59,10 +65,17 @@ function BurgerConstructor({ ingredients }) {
           </span>
           <CurrencyIcon type="primary" />
         </div>
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" onClick={showModal}>
           Оформить заказ
         </Button>
       </div>
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          isTypeOrder={true}
+        />
+      )}
     </section>
   );
 }
