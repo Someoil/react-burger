@@ -9,11 +9,11 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import { IngredientPropType } from "../../utils/ingredientsPropTypes";
 
-function BurgerIngredient({ingredient}) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  function showModal(){
-    console.log(1);
-  };
+function BurgerIngredient({ ingredient }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  function showModal() {
+    setIsModalOpen(true);
+  }
 
   return (
     <>
@@ -34,7 +34,13 @@ function BurgerIngredient({ingredient}) {
         <h3 className={clsx("")}>{ingredient.name}</h3>
         <Counter className={clsx(styles.count)} count={1} size="default" />
       </article>
-      {<Modal />}
+      {isModalOpen &&<Modal
+          title="Детали ингредиента"
+          ingredient={ingredient}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      }
     </>
   );
 }
