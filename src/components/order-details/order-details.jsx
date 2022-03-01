@@ -1,7 +1,9 @@
 import React from "react";
-import styles from "./OrderDetails.module.scss";
+
 import clsx from "clsx";
 import OrderOkImg from "../../images/ok.svg";
+
+import styles from "./order-details.module.scss";
 
 function OrderDetails() {
   return (

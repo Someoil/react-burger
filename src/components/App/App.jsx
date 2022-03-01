@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/reset.scss";
-import "../../styles/main.scss";
-import styles from "./App.module.scss";
+
+import AppHeader from "../app-header/app-header";
+import BurgerIngredients from "../burger-ingredients/burger-ingredients";
+import BurgerConstructor from "../burger-constructor/burger-constructor";
 import clsx from "clsx";
 
-import AppHeader from "../AppHeader/AppHeader";
-import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
-import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
+import "../../styles/reset.scss";
+import "../../styles/main.scss";
+import styles from "./app.module.scss";
 
-//import Data from "../../utils/data.json";
+const ingredientsDataUrl = "https://norma.nomoreparties.space/api/ingredients";
 
-function App() {
-  const dataUrl = "https://norma.nomoreparties.space/api/ingredients";
-  const [dataApi, setDataApi] = useState([]);
+function App() { 
+  const [ingredientsData, setIngredientsData] = useState([]);
   const fetchData = () => {
-    fetch(dataUrl)
+    fetch(ingredientsDataUrl)
       .then((response) => response.json())
       .then((responce) => {
-        setDataApi(responce.data);
+        setIngredientsData(responce.data);
       })
       .catch((error) => {
         console.log(error);
@@ -31,14 +31,14 @@ function App() {
   return (
     <div>
       <AppHeader />
-      {dataApi.length && <main>
+      {ingredientsData.length && <main>
         <div className={clsx("container")}>
           <h1 className={clsx("text text_type_main-large mt-10 mb-5")}>
             Соберите бургер
           </h1>
           <div className={clsx(styles.content)}>
-            <BurgerIngredients ingredients={dataApi} />
-            <BurgerConstructor ingredients={dataApi} />
+            <BurgerIngredients ingredients={ingredientsData} />
+            <BurgerConstructor ingredients={ingredientsData} />
           </div>
         </div>
       </main>}

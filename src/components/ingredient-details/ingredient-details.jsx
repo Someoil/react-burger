@@ -1,7 +1,9 @@
 import React from "react";
-import styles from "./IngredientDetails.module.scss";
+
 import clsx from "clsx";
 import { IngredientPropType } from "../../utils/ingredientsPropTypes";
+
+import styles from "./ingredient-details.module.scss";
 
 function IngredientDetails({ ingredient }) {
   return (

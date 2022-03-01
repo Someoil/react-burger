@@ -1,19 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from "./Modal.module.scss";
+
+import ModalOverlay from "../modal-overlay/modal-overlay";
+import IngredientDetails from "../ingredient-details/ingredient-details";
+import OrderDetails from "../order-details/order-details";
 
 import clsx from "clsx";
-import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import ModalOverlay from "./ModalOverlay";
-import IngredientDetails from "../IngredientDetails/IngredientDetails";
-import OrderDetails from "../OrderDetails/OrderDetails";
-import { IngredientPropType } from "../../utils/ingredientsPropTypes";
 import PropTypes from "prop-types";
+import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { IngredientPropType } from "../../utils/ingredientsPropTypes";
+
+import styles from "./modal.module.scss";
+
+const modalRoot = document.getElementById('modal-root');
+
 
 function Modal({ title, isOpen, onClose, ingredient, isTypeOrder }) {
   React.useEffect(() => {
     function closeOnEscape(event) {
-      if (event.keyCode === 27) {
+      if (event.key === 'Escape') {
         onClose();
       }
     }
@@ -38,7 +43,7 @@ function Modal({ title, isOpen, onClose, ingredient, isTypeOrder }) {
         {isTypeOrder && <OrderDetails />}
       </article>
     </>,
-    document.body
+    modalRoot
   );
 }
 Modal.propTypes = {

@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./BurgerConstructor.module.scss";
-import clsx from "clsx";
 
+import Modal from "../modal/modal";
+import clsx from "clsx";
+import { IngredientsPropType } from "../../utils/ingredientsPropTypes";
 import {
   ConstructorElement,
   Button,
@@ -9,15 +10,17 @@ import {
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import Modal from "../Modal/Modal";
-import { IngredientsPropType } from "../../utils/ingredientsPropTypes";
+import styles from "./burger-constructor.module.scss";
 
 function BurgerConstructor({ ingredients }) {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   function showModal() {
     setIsModalOpen(true);
-  }
-
+  };
+  function closeModal(){
+    setIsModalOpen(false);
+  };
+  
   const tradingPrice = (arr) =>
     arr.reduce((sum, current) => sum + current.price, 0);
 
@@ -72,7 +75,7 @@ function BurgerConstructor({ ingredients }) {
       {isModalOpen && (
         <Modal
           isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          onClose={closeModal}
           isTypeOrder={true}
         />
       )}

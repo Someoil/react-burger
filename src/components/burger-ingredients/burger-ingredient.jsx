@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import styles from "./BurgerIngredient.module.scss";
-import clsx from "clsx";
 
-import Modal from "../Modal/Modal";
+import Modal from "../modal/modal";
+import clsx from "clsx";
+import { IngredientPropType } from "../../utils/ingredientsPropTypes";
 import {
   CurrencyIcon,
   Counter,
 } from "@ya.praktikum/react-developer-burger-ui-components";
-import { IngredientPropType } from "../../utils/ingredientsPropTypes";
+
+import styles from "./burger-ingredient.module.scss";
 
 function BurgerIngredient({ ingredient }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   function showModal() {
     setIsModalOpen(true);
-  }
+  };
+  function closeModal(){
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -31,7 +35,7 @@ function BurgerIngredient({ ingredient }) {
           </span>
           <CurrencyIcon type="primary" />
         </div>
-        <h3 className={clsx("")}>{ingredient.name}</h3>
+        <h3>{ingredient.name}</h3>
         <Counter className={clsx(styles.count)} count={1} size="default" />
       </article>
       {isModalOpen && (
@@ -39,7 +43,7 @@ function BurgerIngredient({ ingredient }) {
           title="Детали ингредиента"
           ingredient={ingredient}
           isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          onClose={closeModal}
         />
       )}
     </>
