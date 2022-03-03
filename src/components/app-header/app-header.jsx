@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./AppHeader.module.css";
 
 import clsx from "clsx";
 import {
@@ -8,6 +7,8 @@ import {
   ListIcon,
   ProfileIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
+
+import styles from "./app-header.module.css";
 
 function Header() {
   return (
@@ -21,7 +22,7 @@ function Header() {
                   className={
                     "flex-center text text_type_main-default pt-3 pr-5 pb-4 mr-2"
                   }
-                  href=""
+                  href="/"
                 >
                   <span className="flex-center mr-2">
                     <BurgerIcon type="primary" />
@@ -34,7 +35,7 @@ function Header() {
                   className={
                     "flex-center text text_type_main-default text_color_inactive pl-5 pt-3 pr-5 pb-4"
                   }
-                  href=""
+                  href="/"
                 >
                   <span className="flex-center mr-2">
                     <ListIcon type="secondary" />
@@ -51,7 +52,7 @@ function Header() {
                 styles.lk,
                 "flex-center text text_type_main-default text_color_inactive pl-5 pt-3 pb-4"
               )}
-              href=""
+              href="/"
             >
               <span className="flex-center mr-2">
                 <ProfileIcon type="secondary" />

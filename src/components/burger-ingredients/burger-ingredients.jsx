@@ -1,10 +1,12 @@
 import React from "react";
-import styles from "./BurgerIngredients.module.scss";
-import clsx from "clsx";
 
-import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
-import BurgerIngredient from "./BurgerIngredient";
+import BurgerIngredient from "./burger-ingredient";
+import clsx from "clsx";
 import { IngredientsPropType } from "../../utils/ingredientsPropTypes";
+import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
+
+import styles from "./burger-ingredients.module.scss";
+
 function BurgerIngredients({ ingredients }) {
   const [current, setCurrent] = React.useState("one");
   return (
@@ -29,7 +31,6 @@ function BurgerIngredients({ ingredients }) {
                 <BurgerIngredient
                   className={styles.wrap}
                   ingredient={ingredient}
-                  onClick=""
                   key={ingredient._id}
                 />
               );
@@ -42,7 +43,6 @@ function BurgerIngredients({ ingredients }) {
               return (
                 <BurgerIngredient
                   ingredient={ingredient}
-                  onClick=""
                   key={ingredient._id}
                 />
               );
@@ -55,7 +55,6 @@ function BurgerIngredients({ ingredients }) {
               return (
                 <BurgerIngredient
                   ingredient={ingredient}
-                  onClick=""
                   key={ingredient._id}
                 />
               );
