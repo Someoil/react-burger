@@ -1,6 +1,6 @@
 import React from "react";
-
 import clsx from "clsx";
+
 import { IngredientPropType } from "../../utils/ingredientsPropTypes";
 
 import styles from "./ingredient-details.module.scss";

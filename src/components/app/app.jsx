@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
+import clsx from "clsx";
 
 import AppHeader from "../app-header/app-header";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
-import clsx from "clsx";
 
 import "../../styles/reset.scss";
 import "../../styles/main.scss";
 import styles from "./app.module.scss";
 
-const ingredientsDataUrl = "https://norma.nomoreparties.space/api/ingredients";
+const INGREDIENTS_DATA_URL = "https://norma.nomoreparties.space/api/ingredients";
 
 function App() { 
   const [ingredientsData, setIngredientsData] = useState([]);
   const fetchData = () => {
-    fetch(ingredientsDataUrl)
+    fetch(INGREDIENTS_DATA_URL)
       .then((response) => response.json())
       .then((responce) => {
         setIngredientsData(responce.data);

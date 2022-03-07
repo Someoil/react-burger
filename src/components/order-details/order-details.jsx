@@ -1,6 +1,6 @@
 import React from "react";
-
 import clsx from "clsx";
+
 import OrderOkImg from "../../images/ok.svg";
 
 import styles from "./order-details.module.scss";
