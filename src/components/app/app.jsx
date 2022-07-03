@@ -5,13 +5,14 @@ import AppHeader from "../app-header/app-header";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
 
+import { IngredientsContext } from "../../utils/appContext";
+import { INGREDIENTS_DATA_URL } from "../../utils/constans";
+
 import "../../styles/reset.scss";
 import "../../styles/main.scss";
 import styles from "./app.module.scss";
 
-const INGREDIENTS_DATA_URL = "https://norma.nomoreparties.space/api/ingredients";
-
-function App() { 
+function App() {
   const [ingredientsData, setIngredientsData] = useState([]);
   const fetchData = () => {
     fetch(INGREDIENTS_DATA_URL)
@@ -31,17 +32,21 @@ function App() {
   return (
     <div>
       <AppHeader />
-      {ingredientsData.length && <main>
-        <div className={clsx("container")}>
-          <h1 className={clsx("text text_type_main-large mt-10 mb-5")}>
-            Соберите бургер
-          </h1>
-          <div className={clsx(styles.content)}>
-            <BurgerIngredients ingredients={ingredientsData} />
-            <BurgerConstructor ingredients={ingredientsData} />
+      {ingredientsData.length && (
+        <main>
+          <div className={clsx("container")}>
+            <h1 className={clsx("text text_type_main-large mt-10 mb-5")}>
+              Соберите бургер
+            </h1>
+            <div className={clsx(styles.content)}>
+              <IngredientsContext.Provider value={ingredientsData}>
+                <BurgerIngredients />
+                <BurgerConstructor />
+              </IngredientsContext.Provider>
+            </div>
           </div>
-        </div>
-      </main>}
+        </main>
+      )}
     </div>
   );
 }

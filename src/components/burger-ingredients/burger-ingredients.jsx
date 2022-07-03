@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import clsx from "clsx";
 
 import BurgerIngredient from "./burger-ingredient";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
-import { IngredientsPropType } from "../../utils/ingredientsPropTypes";
+import { IngredientsContext } from "../../utils/appContext";
 
 import styles from "./burger-ingredients.module.scss";
 
-function BurgerIngredients({ ingredients }) {
+function BurgerIngredients() {
   const [currentTab, setCurrentTab] = React.useState("bun");
-
+  const ingredients = useContext(IngredientsContext);
   function onTabClick(tab) {
     setCurrentTab(tab);
     const element = document.getElementById(tab);
-    if (element) element.scrollIntoView({behavior: "smooth"});
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   }
   return (
     <section className={clsx(styles.section, "mb-10")}>
@@ -30,7 +30,9 @@ function BurgerIngredients({ ingredients }) {
         </Tab>
       </div>
       <div className={clsx(styles.scroll)}>
-        <h2 className="text text_type_main-medium mb-6" id="bun">Булки</h2>
+        <h2 className="text text_type_main-medium mb-6" id="bun">
+          Булки
+        </h2>
         <div className={clsx(styles.wrap, "mb-10")}>
           {ingredients.map((ingredient) => {
             if (ingredient.type === "bun")
@@ -43,7 +45,9 @@ function BurgerIngredients({ ingredients }) {
               );
           })}
         </div>
-        <h2 className="text text_type_main-medium mb-6" id="sauce">Соусы</h2>
+        <h2 className="text text_type_main-medium mb-6" id="sauce">
+          Соусы
+        </h2>
         <div className={clsx(styles.wrap, "mb-10")}>
           {ingredients.map((ingredient) => {
             if (ingredient.type === "sauce")
@@ -55,7 +59,9 @@ function BurgerIngredients({ ingredients }) {
               );
           })}
         </div>
-        <h2 className="text text_type_main-medium mb-6" id="main">Начинки</h2>
+        <h2 className="text text_type_main-medium mb-6" id="main">
+          Начинки
+        </h2>
         <div className={clsx(styles.wrap, "mb-10")}>
           {ingredients.map((ingredient) => {
             if (ingredient.type === "main")
@@ -71,7 +77,5 @@ function BurgerIngredients({ ingredients }) {
     </section>
   );
 }
-BurgerIngredients.propTypes = {
-  ingredients: IngredientsPropType.isRequired,
-};
+
 export default BurgerIngredients;
