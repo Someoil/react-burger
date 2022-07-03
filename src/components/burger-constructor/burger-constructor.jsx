@@ -11,6 +11,7 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import { IngredientsContext } from "../../utils/appContext";
+import { ORDERS_DATA_URL } from "../../utils/constans";
 
 import styles from "./burger-constructor.module.scss";
 
@@ -22,12 +23,33 @@ function BurgerConstructor() {
       return item;
     }
   });
-  console.log(ingredients);
 
+  const [order, setOrder] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  function showModal() {
-    setIsModalOpen(true);
+
+  function sendOrder() {
+    const ingredientsIds = ingredients.map((item) => item._id);
+    const data = JSON.stringify({ ingredients: ingredientsIds });
+    const fetchOrder = () => {
+      fetch(ORDERS_DATA_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: data,
+      })
+        .then((response) => response.json())
+        .then((responce) => {
+          setOrder(responce);
+          setIsModalOpen(true);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchOrder();
   }
+
   function closeModal() {
     setIsModalOpen(false);
   }
@@ -84,13 +106,13 @@ function BurgerConstructor() {
           </span>
           <CurrencyIcon type="primary" />
         </div>
-        <Button type="primary" size="large" onClick={showModal}>
+        <Button type="primary" size="large" onClick={sendOrder}>
           Оформить заказ
         </Button>
       </div>
       {isModalOpen && (
         <Modal onClose={closeModal}>
-          <OrderDetails />
+          <OrderDetails orderNumber={order.order.number} />
         </Modal>
       )}
     </section>

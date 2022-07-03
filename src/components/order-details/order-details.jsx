@@ -5,10 +5,14 @@ import OrderOkImg from "../../images/ok.svg";
 
 import styles from "./order-details.module.scss";
 
-function OrderDetails() {
+import PropTypes from "prop-types";
+
+function OrderDetails(props) {
   return (
     <div className={clsx(styles.wrap, "pb-20")}>
-      <h2 className={clsx("mb-8 text text_type_digits-large")}>22022022</h2>
+      <h2 className={clsx("mb-8 text text_type_digits-large")}>
+        {props.orderNumber}
+      </h2>
       <p className={clsx("mb-15 text text_type_main-medium")}>
         идентификатор заказа
       </p>
@@ -22,5 +26,9 @@ function OrderDetails() {
     </div>
   );
 }
+
+OrderDetails.propTypes = {
+  orderNumber: PropTypes.number.isRequired,
+};
 
 export default OrderDetails;
