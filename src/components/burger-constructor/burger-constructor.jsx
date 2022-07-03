@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import clsx from "clsx";
 
 import Modal from "../modal/modal";
@@ -11,7 +11,8 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
 import { IngredientsContext } from "../../utils/appContext";
-import { ORDERS_DATA_URL } from "../../utils/constans";
+import { BASE_URL } from "../../utils/constans";
+import { checkResponse } from "../../utils/functions";
 
 import styles from "./burger-constructor.module.scss";
 
@@ -31,14 +32,14 @@ function BurgerConstructor() {
     const ingredientsIds = ingredients.map((item) => item._id);
     const data = JSON.stringify({ ingredients: ingredientsIds });
     const fetchOrder = () => {
-      fetch(ORDERS_DATA_URL, {
+      fetch(BASE_URL + "/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
         body: data,
       })
-        .then((response) => response.json())
+        .then(checkResponse)
         .then((responce) => {
           setOrder(responce);
           setIsModalOpen(true);
@@ -53,8 +54,6 @@ function BurgerConstructor() {
   function closeModal() {
     setIsModalOpen(false);
   }
-
-  useEffect(() => {}, []);
 
   const tradingPrice = (arr) =>
     arr.reduce((sum, current) => {

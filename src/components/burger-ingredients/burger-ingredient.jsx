@@ -16,10 +16,10 @@ function BurgerIngredient({ ingredient }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   function showModal() {
     setIsModalOpen(true);
-  };
-  function closeModal(){
+  }
+  function closeModal() {
     setIsModalOpen(false);
-  };
+  }
 
   return (
     <>

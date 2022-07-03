@@ -6,7 +6,8 @@ import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
 
 import { IngredientsContext } from "../../utils/appContext";
-import { INGREDIENTS_DATA_URL } from "../../utils/constans";
+import { BASE_URL } from "../../utils/constans";
+import { checkResponse } from "../../utils/functions";
 
 import "../../styles/reset.scss";
 import "../../styles/main.scss";
@@ -15,8 +16,8 @@ import styles from "./app.module.scss";
 function App() {
   const [ingredientsData, setIngredientsData] = useState([]);
   const fetchData = () => {
-    fetch(INGREDIENTS_DATA_URL)
-      .then((response) => response.json())
+    fetch(BASE_URL + "/ingredients")
+      .then(checkResponse)
       .then((responce) => {
         setIngredientsData(responce.data);
       })
