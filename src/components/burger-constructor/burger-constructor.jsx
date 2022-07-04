@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import clsx from "clsx";
 
 import Modal from "../modal/modal";
-import clsx from "clsx";
-import { IngredientsPropType } from "../../utils/ingredientsPropTypes";
+import OrderDetails from "../order-details/order-details";
 import {
   ConstructorElement,
   Button,
@@ -10,19 +10,56 @@ import {
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
+import { IngredientsContext } from "../../utils/appContext";
+import { BASE_URL } from "../../utils/constans";
+import { checkResponse } from "../../utils/functions";
+
 import styles from "./burger-constructor.module.scss";
 
-function BurgerConstructor({ ingredients }) {
+function BurgerConstructor() {
+  let bunSum = 0;
+  const ingredients = useContext(IngredientsContext).filter(function (item) {
+    if ((item.type === "bun" && bunSum === 0) || item.type !== "bun") {
+      if (item.type === "bun") bunSum++;
+      return item;
+    }
+  });
+
+  const [order, setOrder] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  function showModal() {
-    setIsModalOpen(true);
-  };
-  function closeModal(){
+
+  function sendOrder() {
+    const ingredientsIds = ingredients.map((item) => item._id);
+    const data = JSON.stringify({ ingredients: ingredientsIds });
+    const fetchOrder = () => {
+      fetch(BASE_URL + "/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: data,
+      })
+        .then(checkResponse)
+        .then((responce) => {
+          setOrder(responce);
+          setIsModalOpen(true);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchOrder();
+  }
+
+  function closeModal() {
     setIsModalOpen(false);
-  };
-  
+  }
+
   const tradingPrice = (arr) =>
-    arr.reduce((sum, current) => sum + current.price, 0);
+    arr.reduce((sum, current) => {
+      if (current.type === "bun") return sum + current.price * 2;
+      return sum + current.price;
+    }, 0);
 
   return (
     <section className={clsx(styles.section)}>
@@ -68,22 +105,17 @@ function BurgerConstructor({ ingredients }) {
           </span>
           <CurrencyIcon type="primary" />
         </div>
-        <Button type="primary" size="large" onClick={showModal}>
+        <Button type="primary" size="large" onClick={sendOrder}>
           Оформить заказ
         </Button>
       </div>
       {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          isTypeOrder={true}
-        />
+        <Modal onClose={closeModal}>
+          <OrderDetails orderNumber={order.order.number} />
+        </Modal>
       )}
     </section>
   );
 }
 
-BurgerConstructor.propTypes = {
-  ingredients: IngredientsPropType,
-};
 export default BurgerConstructor;
